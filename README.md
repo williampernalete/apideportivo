@@ -6,6 +6,9 @@ los respectivos Endpoint
 
 ## Endpoints
 
+Post /api/login  
+Post /api/user
+
 ## Usage
 
 ```

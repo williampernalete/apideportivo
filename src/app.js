@@ -11,6 +11,7 @@ app.use(express.json()); //permite q el servidro entienda datos json
 
 //routes
 //app.get("/api/user", (req, res) => res.send("Riuta"));
+app.use("/api/login", require("./routes/users"));
 app.use("/api/user", require("./routes/users"));
 
 module.exports = app;
