@@ -10,7 +10,6 @@ const {
 router
   .route("/")
   //.get((req, res) => res.json({ Mensaje: "GET USers" }))
-  .post(login)
   .get(getUser)
   .post(createUser);
 
