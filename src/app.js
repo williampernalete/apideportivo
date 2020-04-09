@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const jwt = require("jsonwebtoken");
+const rutasProtegidas = require("./middleware/rutasProtegistas");
 
 //settings
 app.set("port", process.env.PORT || 5000);
@@ -11,9 +12,9 @@ app.set("llave", process.env.SEED_AUTENTICACION);
 app.use(cors()); //permite poder enviar datos entre servidores
 app.use(express.json()); //permite q el servidro entienda datos json
 
-const rutasProtegidas = express.Router();
+/*const rutasProtegidas = express.Router();
 
-rutasProtegidas.use((req, res, next) => {
+ rutasProtegidas.use((req, res, next) => {
   var token = req.headers["authorization"];
   var llavemaestra = process.env.SEED_AUTENTICACION;
 
@@ -28,14 +29,14 @@ rutasProtegidas.use((req, res, next) => {
   jwt.verify(token, llavemaestra, (err, decoded) => {
     if (err) {
       res.status(401).send({
-        error: "token invalido",
+        error: "token invalido", 
       });
     } else {
       req.decoded = decoded;
       next();
     }
   });
-});
+}); */
 
 //routes
 //app.get("/api/user", (req, res) => res.send("Riuta"));
